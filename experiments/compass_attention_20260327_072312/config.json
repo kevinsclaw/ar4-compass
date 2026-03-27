@@ -1,0 +1,68 @@
+{
+  "args": {
+    "method": "attention",
+    "n_iters": 3,
+    "n_real_rollouts": 5,
+    "n_dr_samples": 32,
+    "causal_epochs": 300,
+    "hidden_dim": 128,
+    "sparse_weight": 0.01,
+    "param_opt_steps": 150,
+    "param_opt_lr": 0.01,
+    "logdir": "./experiments",
+    "exp_name": null,
+    "seed": 42
+  },
+  "modified_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    10,
+    7,
+    25
+  ],
+  "modifications": {
+    "joint_1@damping": {
+      "base": -10.0,
+      "target": -8.745401188473625,
+      "scale": 0.8745401188473625
+    },
+    "joint_2@damping": {
+      "base": -10.0,
+      "target": -14.50714306409916,
+      "scale": 1.4507143064099162
+    },
+    "joint_3@damping": {
+      "base": -10.0,
+      "target": -12.31993941811405,
+      "scale": 1.231993941811405
+    },
+    "joint_5@damping": {
+      "base": -10.0,
+      "target": -6.560186404424365,
+      "scale": 0.6560186404424365
+    },
+    "joint_6@damping": {
+      "base": -10.0,
+      "target": -6.559945203362027,
+      "scale": 0.6559945203362026
+    },
+    "joint_5@frictionloss": {
+      "base": 0.1,
+      "target": 0.07143002268829111,
+      "scale": 0.7143002268829112
+    },
+    "joint_2@frictionloss": {
+      "base": 0.1,
+      "target": 0.14763327094232795,
+      "scale": 1.4763327094232794
+    },
+    "contact@friction_sliding": {
+      "base": 0.8,
+      "target": 0.5870775579330081,
+      "scale": 0.7338469474162601
+    }
+  }
+}

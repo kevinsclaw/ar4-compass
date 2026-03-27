@@ -180,8 +180,11 @@ class AttentionCausalModel(BaseCausalModel):
         # Optional: Apply threshold for sparse attention
         if threshold is not None:
             attn_mask = (attn_weights > threshold).float()
-            # Re-compute with masked attention (approximate)
-            attended_features = attended_features * attn_mask.unsqueeze(-1).mean(dim=-1, keepdim=True)
+            # Re-normalize attention weights
+            attn_weights = attn_weights * attn_mask
+            attn_weights = attn_weights / (attn_weights.sum(dim=-1, keepdim=True) + 1e-10)
+            # Re-compute attended features with masked attention
+            attended_features = torch.bmm(attn_weights, param_encoded)
         
         # Residual connection
         attended_features = self.ln_cross(attended_features + effect_queries)

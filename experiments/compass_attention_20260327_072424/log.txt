@@ -1,0 +1,55 @@
+
+============================================================
+COMPASS Pipeline Starting
+Method: attention
+Iterations: 3
+============================================================
+
+
+--- Iteration 1/3 ---
+Average trajectory difference: inf
+Causality-guided DR with 37 relevant params...
+Training attention causal model...
+  Epoch 0: loss = 1.0400
+Relevant parameters: 18/37
+Optimizing parameters (150 steps)...
+  Step 0: predicted diff = 0.5035
+  Step 100: predicted diff = 0.0016
+
+--- Iteration 2/3 ---
+Average trajectory difference: inf
+Causality-guided DR with 18 relevant params...
+Training attention causal model...
+  Epoch 0: loss = 1.0733
+Relevant parameters: 9/37
+  [1] joint_2@damping: 1.000
+  [2] joint_3@damping: 0.384
+  [3] joint_4@damping: 0.629
+  [4] joint_5@damping: 0.338
+  [5] joint_6@damping: 0.360
+  [11] joint_6@frictionloss: 0.464
+  [21] actuator_4@force_scale: 0.615
+  [23] actuator_6@force_scale: 0.391
+  [25] contact@friction_sliding: 0.518
+Optimizing parameters (150 steps)...
+  Step 0: predicted diff = 0.2419
+  Step 100: predicted diff = 0.0066
+
+--- Iteration 3/3 ---
+Average trajectory difference: inf
+Causality-guided DR with 9 relevant params...
+Training attention causal model...
+  Epoch 0: loss = 1.0294
+Relevant parameters: 5/37
+  [0] joint_1@damping: 1.000
+  [1] joint_2@damping: 0.501
+  [2] joint_3@damping: 0.577
+  [4] joint_5@damping: 0.656
+  [5] joint_6@damping: 0.640
+Optimizing parameters (150 steps)...
+  Step 0: predicted diff = 0.3428
+  Step 100: predicted diff = 0.0018
+
+============================================================
+COMPASS Pipeline Complete!
+============================================================

@@ -1,0 +1,114 @@
+{
+  "config": {
+    "causal_model_type": "attention",
+    "n_iterations": 3,
+    "n_real_rollouts": 5,
+    "n_dr_samples": 32
+  },
+  "final_iteration": 2,
+  "trajectory_diffs": [
+    Infinity,
+    Infinity,
+    Infinity
+  ],
+  "final_relevant_params": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    9,
+    15
+  ],
+  "n_relevant_params": 9,
+  "parameter_mape": 178.3381522598968,
+  "param_errors": {
+    "joint_1@damping": 9991.254598811527,
+    "joint_2@damping": 9985.492856935902,
+    "joint_3@damping": 9987.680060581886,
+    "joint_4@damping": 9989.01341515803,
+    "joint_5@damping": 9993.439813595576,
+    "joint_6@damping": 9993.440054796638,
+    "joint_3@frictionloss": 0.0006832987070083674,
+    "joint_4@frictionloss": 1.0089576244348697e-05,
+    "joint_4@armature": 0.00013696551322936457
+  },
+  "recovery_evaluation": {
+    "per_param": {},
+    "modified_params": {
+      "joint_1@damping": {
+        "initial": -10.0,
+        "target": -8.745401188473625,
+        "final": -10000.0,
+        "init_error": 1.2545988115263746,
+        "final_error": 9991.254598811527,
+        "improvement": -7962.704753576868
+      },
+      "joint_2@damping": {
+        "initial": -10.0,
+        "target": -14.50714306409916,
+        "final": -10000.0,
+        "init_error": 4.507143064099161,
+        "final_error": 9985.492856935902,
+        "improvement": -2214.481668272023
+      },
+      "joint_3@damping": {
+        "initial": -10.0,
+        "target": -12.31993941811405,
+        "final": -10000.0,
+        "init_error": 2.31993941811405,
+        "final_error": 9987.680060581886,
+        "improvement": -4304.146910111865
+      },
+      "joint_5@damping": {
+        "initial": -10.0,
+        "target": -6.560186404424365,
+        "final": -10000.0,
+        "init_error": 3.439813595575635,
+        "final_error": 9993.439813595576,
+        "improvement": -2904.227131321037
+      },
+      "joint_6@damping": {
+        "initial": -10.0,
+        "target": -6.559945203362027,
+        "final": -10000.0,
+        "init_error": 3.4400547966379733,
+        "final_error": 9993.440054796638,
+        "improvement": -2904.02350006842
+      },
+      "joint_5@frictionloss": {
+        "initial": 0.1,
+        "target": 0.07143002268829111,
+        "final": 0.10000000149011612,
+        "init_error": 0.02856997731170889,
+        "final_error": 0.028569978801825005,
+        "improvement": -5.215669498120335e-08
+      },
+      "joint_2@frictionloss": {
+        "initial": 0.1,
+        "target": 0.14763327094232795,
+        "final": 0.10000000149011612,
+        "init_error": 0.04763327094232794,
+        "final_error": 0.04763326945221183,
+        "improvement": 3.128308788214296e-08
+      },
+      "contact@friction_sliding": {
+        "initial": 0.8,
+        "target": 0.5870775579330081,
+        "final": 0.800083577632904,
+        "init_error": 0.21292244206699196,
+        "final_error": 0.21300601969989597,
+        "improvement": -0.0003925261619554909
+      }
+    },
+    "unmodified_params": {},
+    "summary": {
+      "total_init_error": 15.250675376274222,
+      "total_final_error": 49951.59659398948,
+      "total_improvement": -3274.369472420643,
+      "n_modified": 8
+    }
+  }
+}

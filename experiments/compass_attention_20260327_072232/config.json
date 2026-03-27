@@ -1,0 +1,22 @@
+{
+  "args": {
+    "method": "attention",
+    "n_iters": 3,
+    "n_real_rollouts": 5,
+    "n_dr_samples": 32,
+    "causal_epochs": 500,
+    "hidden_dim": 128,
+    "sparse_weight": 0.01,
+    "param_opt_steps": 200,
+    "param_opt_lr": 0.01,
+    "logdir": "./experiments",
+    "exp_name": null,
+    "seed": 42
+  },
+  "modified_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    
