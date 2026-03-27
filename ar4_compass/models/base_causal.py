@@ -11,9 +11,8 @@ import numpy as np
 
 
 def CUDA(x):
-    """Move tensor to CUDA if available."""
-    if torch.cuda.is_available():
-        return x.cuda()
+    """Move tensor to CUDA if available. Deprecated - use tensor.to(device) instead."""
+    # Don't auto-move to CUDA, let the caller handle device placement
     return x
 
 

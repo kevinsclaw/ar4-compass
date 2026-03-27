@@ -69,7 +69,7 @@ class COMPASSOriginal(BaseCausalModel):
             hidden_dim, 
             num_hidden
         )
-        self.encoder_idx_emb = CUDA(nn.Embedding(self.total_input_dim, emb_dim))
+        self.encoder_idx_emb = nn.Embedding(self.total_input_dim, emb_dim)
         
         # Decoder: predicts each output dimension
         # Input: [causal_dim + emb_dim]
@@ -80,7 +80,7 @@ class COMPASSOriginal(BaseCausalModel):
             hidden_dim, 
             num_hidden
         )
-        self.decoder_idx_emb = CUDA(nn.Embedding(output_dim, emb_dim))
+        self.decoder_idx_emb = nn.Embedding(output_dim, emb_dim)
         
         # Learnable causal graph parameters (logits)
         # Initialized to 3 to start with high probability of connection
@@ -124,8 +124,9 @@ class COMPASSOriginal(BaseCausalModel):
         inputs = inputs.unsqueeze(-1)
         
         # Get encoder embeddings: [S+A, E]
+        device = inputs.device
         encoder_idx = self.encoder_idx_emb(
-            CUDA(torch.arange(0, self.total_input_dim).long())
+            torch.arange(0, self.total_input_dim, device=device).long()
         )
         # Repeat for batch: [B, S+A, E]
         batch_encoder_idx = encoder_idx.unsqueeze(0).expand(batch_size, -1, -1)
@@ -140,14 +141,14 @@ class COMPASSOriginal(BaseCausalModel):
         if not self.use_full:
             _, self.mask = self.get_causal_weights(threshold)
         else:
-            self.mask = CUDA(torch.ones_like(self.mask_logits))
+            self.mask = torch.ones_like(self.mask_logits)
         
         # Apply mask: [B, S+A, C] × [S+A, K] -> [B, K, C]
         masked_feature = torch.einsum('bnc, nk -> bkc', latent_feature, self.mask)
         
         # Get decoder embeddings: [K, E]
         decoder_idx = self.decoder_idx_emb(
-            CUDA(torch.arange(0, self.output_dim).long())
+            torch.arange(0, self.output_dim, device=device).long()
         )
         # Repeat for batch: [B, K, E]
         batch_decoder_idx = decoder_idx.unsqueeze(0).expand(batch_size, -1, -1)

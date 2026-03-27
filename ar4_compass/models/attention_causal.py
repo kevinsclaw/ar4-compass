@@ -96,7 +96,7 @@ class AttentionCausalModel(BaseCausalModel):
             embed_dim,
             1,
             hidden_dim,
-            num_layers=1,
+            num_hidden=1,
             dropout=dropout
         )
         
