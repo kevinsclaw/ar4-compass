@@ -1,0 +1,17 @@
+{
+  "n_iters": 1,
+  "n_epochs": 500,
+  "n_real_rollouts": 5,
+  "n_dr_samples": 32,
+  "methods": [
+    "compass",
+    "attention",
+    "nam"
+  ],
+  "hidden_dim": 128,
+  "sparse_weight": 0.01,
+  "max_steps": 100,
+  "logdir": "./experiments",
+  "exp_name": null,
+  "seed": 42
+}
