@@ -1,0 +1,43 @@
+{
+  "method": "attention",
+  "n_iters": 5,
+  "traj_diff_history": [
+    14.96025480514171,
+    53.3896828226094,
+    55.25974851637319,
+    54.538196461209296,
+    43.60602894564599
+  ],
+  "final_diff": 38.558319374441616,
+  "improvement": -157.73838665628512,
+  "modifications": {
+    "joint_1@damping": {
+      "scale": 0.7,
+      "idx": 0
+    },
+    "joint_2@damping": {
+      "scale": 1.3,
+      "idx": 1
+    },
+    "joint_3@damping": {
+      "scale": 1.2,
+      "idx": 2
+    },
+    "joint_5@damping": {
+      "scale": 0.6,
+      "idx": 4
+    },
+    "joint_6@damping": {
+      "scale": 0.8,
+      "idx": 5
+    },
+    "joint_2@frictionloss": {
+      "scale": 1.5,
+      "idx": 7
+    },
+    "joint_4@frictionloss": {
+      "scale": 0.6,
+      "idx": 9
+    }
+  }
+}
